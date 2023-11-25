@@ -1,22 +1,20 @@
 const URL = "http://192.168.1.5:8080";
 const NUMERO_DE_CUADROS = 12;
-let imgOriginales;
-let imgNuevas;
 
 context("memo-test", ()=>{
-  before(()=>{
+  beforeEach(()=>{
     cy.visit(URL);
   })
 
   it("Asegurarse de que todas las imágenes esten cargadas", ()=>{
-    cy.get("#tablero").find(".cuadroJuego").should("have.length", NUMERO_DE_CUADROS)
+    cy.get("#tablero").find(".cuadroJuego img").should("have.length", NUMERO_DE_CUADROS)
   });
 
   it("Asegurar que las imágenes sean aleatorias", () => {
     let imgOriginales = [];
 
-    // Busca las imágenes dentro de los divs con la clase "cuadroJuego"
-    cy.get(".cuadroJuego img").then((imagenes) => {
+    
+    cy.get("#tablero").find(".cuadroJuego img").then((imagenes) => {
       imagenes.each((i, img) => {
         imgOriginales.push(img.getAttribute("src"));
       });
@@ -26,8 +24,8 @@ context("memo-test", ()=>{
 
     let imgNuevas = [];
 
-    // Vuelve a buscar las imágenes después de recargar la página
-    cy.get(".cuadroJuego img").then((imagenes) => {
+    
+    cy.get("#tablero").find(".cuadroJuego img").then((imagenes) => {
       imagenes.each((i, img) => {
         imgNuevas.push(img.getAttribute("src"));
       });
