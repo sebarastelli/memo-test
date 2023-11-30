@@ -1,4 +1,4 @@
-const URL = "http://192.168.1.5:8080";
+const URL = "http://192.168.1.10:8080";
 const NUMERO_DE_CUADROS = 12;
 
 context("memo-test", ()=>{
@@ -34,4 +34,38 @@ context("memo-test", ()=>{
     });
   });
 
+  describe("Resolver el juego", ()=>{
+    let mapaDePares, listaDePares;
+    it("Elige una combinación erronea", ()=>{
+      cy.get(".cuadroJuego img").then(cuadros=>{
+        mapaDePares = obtenerParDeCuadros(cuadros);
+        listaDePares = Object.values(mapaDePares);
+        console.log(listaDePares)
+        cy.get(`[src="${listaDePares[0][0]}"]`).click();
+
+        // Hacer clic en la primera imagen del segundo par
+        cy.get(`[src="${listaDePares[1][0]}"]`).click({ multiple: true });
+  
+
+        cy.get(".cuadroJuego img").should("have.length", NUMERO_DE_CUADROS)
+      })
+    })
+    
+  })
 })
+
+function obtenerParDeCuadros(cuadros){
+  let pares = {};
+
+  cuadros.each((i, cuadro) => {
+    const src = cuadro.getAttribute("src");
+
+    if (pares[src]) {
+      pares[src].push(src);
+    } else {
+      pares[src] = [src];
+    }
+  });
+  console.log(pares)
+  return pares;
+}
