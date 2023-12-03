@@ -37,15 +37,18 @@ function configurarCuadros(cuadros, frutas){
     cuadros.forEach(function (cuadro, i) {
         let crearImg = document.createElement("img");
         crearImg.setAttribute("src", random[i][0]);
+        crearImg.setAttribute("alt", random[i][1]);
+        crearImg.setAttribute("data-id", i);
         cuadro.appendChild(crearImg);
-        
+        const altValue = crearImg.getAttribute("alt");
+        cuadro.classList.add(altValue);
     });
     console.log(cuadros)
     }
 
-    function manejarClick(seleccion){
+    function manejarClick(seleccion) {
+        
         mostrarCuadro(seleccion);
-
         if (primerCarta === null) {
             primerCarta = seleccion;
         } else {
@@ -59,10 +62,9 @@ function configurarCuadros(cuadros, frutas){
     
             primerCarta = null;
         }
-
-        turnos++
+    
+        turnos++;
     }
-
     function borrarCuadro(cuadroABorrar){
         const imagen = cuadroABorrar.querySelector("img");
         setTimeout(function(){
@@ -84,18 +86,15 @@ function configurarCuadros(cuadros, frutas){
     function cuadrosIguales(cuadro1, cuadro2){
         const imagen1 = cuadro1.querySelector("img");
         const imagen2 = cuadro2.querySelector("img");
-        if(imagen1.getAttribute("src") === imagen2.getAttribute("src")){
-            console.log("true")
+        if(imagen1.getAttribute("src") === imagen2.getAttribute("src") && imagen1.getAttribute("data-id") !== imagen2.getAttribute("data-id")){
             return true
-
         }
         else{
-            console.log("false")
             return false
         }
     }
 
-    function mostrarCuadro(seleccion){
+    function mostrarCuadro(seleccion) {
         const imagen = seleccion.querySelector("img");
         imagen.style.opacity = 1;
     }
