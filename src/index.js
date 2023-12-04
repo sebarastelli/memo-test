@@ -43,7 +43,6 @@ function configurarCuadros(cuadros, frutas){
         const altValue = crearImg.getAttribute("alt");
         cuadro.classList.add(altValue);
     });
-    console.log(cuadros)
     }
 
     function manejarClick(seleccion) {
@@ -103,7 +102,8 @@ function configurarCuadros(cuadros, frutas){
         const cuadrosCompletos = document.querySelectorAll('.completo');
         if (cuadrosCompletos.length === cuadros.length) {
             final.style.display = "block";
-            final.innerText = `Juego terminado, te llevo ${turnos/2} rondas completarlo 👏`
+            final.innerText = `Juego terminado, te llevo ${turnos/2} rondas completarlo 👏`;
+            tablero.style.display = "none";
         }
     }
 

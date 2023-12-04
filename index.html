@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>MemoTest</title>
     <style type="text/css">
-        body, html{
+        body,
+        html {
             margin: 10px;
             padding: 0;
             height: 100%;
         }
-        .filaJuego{
+
+        .filaJuego {
             height: 25vh;
         }
-        .completo{
-            background-color: grey;
+
+        .completo {
+            background-color: rgb(32, 143, 26);
         }
-        img{
+
+        img {
             max-width: 150px;
             max-height: 150px;
             padding: 5px;
@@ -26,7 +32,8 @@
             margin: auto;
             opacity: 0;
         }
-        #mensajeFinal{
+
+        #mensajeFinal {
             display: none;
             height: 400px;
             text-align: center;
@@ -36,32 +43,58 @@
         }
     </style>
 </head>
+
 <body>
     <div id="mensajeFinal"></div>
     <div id="tablero">
         <div class="container-fluid h-100">
-        <div class="row filaJuego">
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        </div>
-        <div class="row filaJuego">
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        </div>
-        <div class="row filaJuego">
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        </div>
-        <div class="row filaJuego">
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        <div class="col columnaJuego"><div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div></div>
-        </div>
+            <div class="row filaJuego">
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+            </div>
+            <div class="row filaJuego">
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+            </div>
+            <div class="row filaJuego">
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+            </div>
+            <div class="row filaJuego">
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+                <div class="col columnaJuego">
+                    <div class="cuadroJuego h-100 border border-dark d-flex align-items-center"></div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./src/index.js"></script>
 </body>
+
 </html>
